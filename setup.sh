@@ -13,6 +13,56 @@ x_otherFullHostname=${x_otherShortHostname}.${x_otherDomain}
 
 
 
+cat << EOF > /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '1q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '2q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '3q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '4q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '5q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '6q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '7q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '8q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '9q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '10q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '11q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '12q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '13q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '14q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+ONBOOT=yes
+EOF
+
+
+
+cat << EOF > /etc/sysconfig/network-scripts/ifcfg-enp0s8
+sed '1q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '2q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '3q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+BOOTPROTO=none
+IPADDR=${x_ip}
+PREFIX=24
+sed '5q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '6q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '7q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '8q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '9q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '10q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '11q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '12q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '13q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed '14q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+ONBOOT=yes
+AUTOCONNECT_PRIORITY=-999
+EOF
+
+
+
+#ifdown enp0s3
+#ifup enp0s3
+#ifdown enp0s8
+#ifup enp0s8
+
+
+
 useradd oracle
 groupadd oinstall
 usermod -g oinstall oracle
@@ -299,51 +349,4 @@ systemctl disable firewalld
 
 
 
-cat << EOF > /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '1q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '2q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '3q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '4q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '5q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '6q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '7q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '8q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '9q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '10q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '11q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '12q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '13q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '14q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-ONBOOT=yes
-EOF
-
-
-
-cat << EOF > /etc/sysconfig/network-scripts/ifcfg-enp0s8
-sed '1q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '2q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '3q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-BOOTPROTO=none
-IPADDR=${x_ip}
-PREFIX=24
-sed '5q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '6q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '7q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '8q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '9q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '10q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '11q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '12q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '13q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '14q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-ONBOOT=yes
-AUTOCONNECT_PRIORITY=-999
-EOF
-
-
-
-#ifdown enp0s3
-#ifup enp0s3
-#ifdown enp0s8
-#ifup enp0s8
 echo "Please to reboot your system now"
