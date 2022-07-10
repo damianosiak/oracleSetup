@@ -13,46 +13,50 @@ x_otherFullHostname=${x_otherShortHostname}.${x_otherDomain}
 
 
 
-cat << EOF > /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '1q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '2q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '3q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '4q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '5q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '6q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '7q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '8q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '9q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '10q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '11q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '12q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '13q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '14q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+cat << EOF > /etc/sysconfig/network-scripts/ifcfg-enp0s3_new
+$(sed '1q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3)
+$(sed '2q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3)
+$(sed '3q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3)
+$(sed '4q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3)
+$(sed '5q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3)
+$(sed '6q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3)
+$(sed '7q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3)
+$(sed '8q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3)
+$(sed '9q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3)
+$(sed '10q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3)
+$(sed '11q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3)
+$(sed '12q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3)
+$(sed '13q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3)
+$(sed '14q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3)
 ONBOOT=yes
 EOF
+mv /etc/sysconfig/network-scripts/ifcfg-enp0s3 /etc/sysconfig/network-scripts/ifcfg-enp0s3_old
+/etc/sysconfig/network-scripts/ifcfg-enp0s3_new /etc/sysconfig/network-scripts/ifcfg-enp0s3
 
 
 
-cat << EOF > /etc/sysconfig/network-scripts/ifcfg-enp0s8
-sed '1q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '2q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '3q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+cat << EOF > /etc/sysconfig/network-scripts/ifcfg-enp0s8_new
+$(sed '1q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s8)
+$(sed '2q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s8)
+$(sed '3q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s8)
 BOOTPROTO=none
 IPADDR=${x_ip}
 PREFIX=24
-sed '5q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '6q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '7q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '8q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '9q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '10q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '11q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '12q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '13q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
-sed '14q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+$(sed '5q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s8)
+$(sed '6q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s8)
+$(sed '7q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s8)
+$(sed '8q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s8)
+$(sed '9q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s8)
+$(sed '10q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s8)
+$(sed '11q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s8)
+$(sed '12q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s8)
+$(sed '13q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s8)
+$(sed '14q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s8)
 ONBOOT=yes
 AUTOCONNECT_PRIORITY=-999
 EOF
+mv /etc/sysconfig/network-scripts/ifcfg-enp0s8 /etc/sysconfig/network-scripts/ifcfg-enp0s8_old
+/etc/sysconfig/network-scripts/ifcfg-enp0s8_new /etc/sysconfig/network-scripts/ifcfg-enp0s8
 
 
 
