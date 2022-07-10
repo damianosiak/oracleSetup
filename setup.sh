@@ -60,10 +60,10 @@ mv /etc/sysconfig/network-scripts/ifcfg-enp0s8_new /etc/sysconfig/network-script
 
 
 
-#ifdown enp0s3
-#ifup enp0s3
-#ifdown enp0s8
-#ifup enp0s8
+ifdown enp0s3
+ifup enp0s3
+ifdown enp0s8
+ifup enp0s8
 
 
 
