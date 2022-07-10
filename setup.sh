@@ -170,12 +170,12 @@ cat << EOF >> /home/oracle/.bash_profile
 ORACLE_HOSTNAME=${x_fullHostname}; export ORACLE_HOSTNAME
 ORACLE_UNQNAME=${x_sid}; export ORACLE_UNQNAME
 ORACLE_BASE=/opt/oracle; export ORACLE_BASE
-ORACLE_HOME=$ORACLE_BASE/product/${x_dbProductVersion}/db_1; export ORACLE_HOME
+ORACLE_HOME=\$ORACLE_BASE/product/${x_dbProductVersion}/db_1; export ORACLE_HOME
 ORACLE_SID=${x_sid}; export ORACLE_SID
-PATH=$ORACLE_HOME/bin:/usr/sbin:$HOME/bin:$PATH; export PATH
-PATH=$ORACLE_HOME/OPatch:$PATH; export PATH
-LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib; export LD_LIBRARY_PATH
-CLASSPATH=$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib; export CLASSPATH
+PATH=\$ORACLE_HOME/bin:/usr/sbin:\$HOME/bin:\$PATH; export PATH
+PATH=\$ORACLE_HOME/OPatch:\$PATH; export PATH
+LD_LIBRARY_PATH=\$ORACLE_HOME/lib:/lib:/usr/lib; export LD_LIBRARY_PATH
+CLASSPATH=\$ORACLE_HOME/jlib:\$ORACLE_HOME/rdbms/jlib; export CLASSPATH
 NLS_LANG=POLISH_POLAND.EE8ISO8859P2; export NLS_LANG
 NLS_DATE_FORMAT="yyyy-mm-dd hh24:mi:ss"; export NLS_DATE_FORMAT
 export DISPLAY=192.168.56.1:0.0
@@ -211,12 +211,12 @@ export TMPDIR=$TMP
 export ORACLE_HOSTNAME=${x_fullHostname}
 export ORACLE_UNQNAME=${x_sid}
 export ORACLE_BASE=/opt/oracle
-export ORACLE_HOME=$ORACLE_BASE/product/${x_dbProductVersion}/db_1
+export ORACLE_HOME=\$ORACLE_BASE/product/${x_dbProductVersion}/db_1
 export ORACLE_SID=${x_sid}
-export PATH=/usr/sbin:/usr/local/bin:$PATH
-export PATH=$ORACLE_HOME/bin:$PATH
-export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
-export CLASSPATH=$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
+export PATH=/usr/sbin:/usr/local/bin:\$PATH
+export PATH=\$ORACLE_HOME/bin:\$PATH
+export LD_LIBRARY_PATH=\$ORACLE_HOME/lib:/lib:/usr/lib
+export CLASSPATH=\$ORACLE_HOME/jlib:\$ORACLE_HOME/rdbms/jlib
 EOF
 
 
@@ -228,7 +228,7 @@ cat << EOF >> start_all.sh
 export ORAENV_ASK=NO
 . oraenv
 export ORAENV_ASK=YES
-dbstart $ORACLE_HOME
+dbstart \$ORACLE_HOME
 EOF
 
 
@@ -240,7 +240,7 @@ cat << EOF >> stop_all.sh
 export ORAENV_ASK=NO
 . oraenv
 export ORAENV_ASK=YES
-dbshut $ORACLE_HOME
+dbshut \$ORACLE_HOME
 EOF
 
 
