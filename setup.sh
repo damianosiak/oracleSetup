@@ -31,7 +31,7 @@ $(sed '14q;d' /etc/sysconfig/network-scripts/ifcfg-enp0s3)
 ONBOOT=yes
 EOF
 mv /etc/sysconfig/network-scripts/ifcfg-enp0s3 /etc/sysconfig/network-scripts/ifcfg-enp0s3_old
-/etc/sysconfig/network-scripts/ifcfg-enp0s3_new /etc/sysconfig/network-scripts/ifcfg-enp0s3
+mv /etc/sysconfig/network-scripts/ifcfg-enp0s3_new /etc/sysconfig/network-scripts/ifcfg-enp0s3
 
 
 
@@ -56,7 +56,7 @@ ONBOOT=yes
 AUTOCONNECT_PRIORITY=-999
 EOF
 mv /etc/sysconfig/network-scripts/ifcfg-enp0s8 /etc/sysconfig/network-scripts/ifcfg-enp0s8_old
-/etc/sysconfig/network-scripts/ifcfg-enp0s8_new /etc/sysconfig/network-scripts/ifcfg-enp0s8
+mv /etc/sysconfig/network-scripts/ifcfg-enp0s8_new /etc/sysconfig/network-scripts/ifcfg-enp0s8
 
 
 
